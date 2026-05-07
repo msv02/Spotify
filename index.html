@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fab fa-spotify"></i>
+                <span>Spotify</span>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="#"><i class="fas fa-search"></i> <span>Search</span></a></li>
+                <li><a href="#"><i class="fas fa-book"></i> <span>Your Library</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="playlist-create">
+                    <i class="fas fa-plus-square"></i>
+                    <span>Create Playlist</span>
+                </div>
+                <div class="liked-songs">
+                    <i class="fas fa-heart"></i>
+                    <span>Liked Songs</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="nav-buttons">
+                    <button class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="user-profile">
+                    <div class="profile-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <h1>Good evening</h1>
+                <div class="song-grid" id="songGrid">
+                    <!-- Songs will be injected here by JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Player Bar -->
+        <footer class="player-bar">
+            <div class="current-track">
+                <img src="" alt="" id="currentTrackImage" class="track-img">
+                <div class="track-info">
+                    <div id="currentTrackTitle" class="track-title">Select a song</div>
+                    <div id="currentTrackArtist" class="track-artist">Artist</div>
+                </div>
+                <i class="far fa-heart"></i>
+            </div>
+
+            <div class="player-controls">
+                <div class="control-buttons">
+                    <button id="shuffleBtn"><i class="fas fa-random"></i></button>
+                    <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                    <button id="playPauseBtn" class="play-btn"><i class="fas fa-play-circle"></i></button>
+                    <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                    <button id="repeatBtn"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <div class="progress-bar-wrapper">
+                        <input type="range" id="progressBar" value="0" min="0" max="100">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+
+            <div class="volume-controls">
+                <i class="fas fa-list"></i>
+                <i class="fas fa-desktop"></i>
+                <i class="fas fa-volume-up"></i>
+                <div class="volume-bar-wrapper">
+                    <input type="range" id="volumeBar" value="100" min="0" max="100">
+                    <div class="volume-fill" id="volumeFill"></div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Navigation (Visible only on mobile) -->
+        <div class="mobile-nav">
+            <a href="#" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-book"></i>
+                <span>Library</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="audioPlayer"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
