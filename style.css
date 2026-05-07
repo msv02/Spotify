@@ -449,8 +449,29 @@ body {
     }
 
     .song-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .song-card {
+        padding: 8px;
+    }
+
+    .song-card h3 {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .song-card p {
+        font-size: 11px;
+    }
+
+    .song-card img {
+        margin-bottom: 8px;
+    }
+
+    .play-hover-btn {
+        display: none; /* Hide hover button on mobile as it's for mouse */
     }
 
     .content-body {
