@@ -5,95 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify - Web Player: Music for everyone</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container">
+    <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="sidebar-logo">
-                <svg viewBox="0 0 167.5 50" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M25 0C11.193 0 0 11.193 0 25s11.193 25 25 25 25-11.193 25-25S38.807 0 25 0zm11.457 36.057c-.45.735-1.41.975-2.145.525-5.91-3.615-13.35-4.425-22.11-2.415-.84.195-1.68-.33-1.875-1.17-.195-.84.33-1.68 1.17-1.875 9.6-2.19 17.835-1.26 24.435 2.79.735.45.975 1.41.525 2.145zm3.045-6.81c-.57.915-1.77 1.215-2.685.645-6.765-4.155-17.07-5.37-25.065-2.94-.12.045-.255.06-.39.06-.885 0-1.665-.63-1.83-1.515-.21-1.035.48-2.025 1.515-2.235 9.135-2.775 20.505-1.395 28.2 3.3.915.57 1.215 1.77.645 2.685zm.27-7.14c-8.115-4.83-21.51-5.28-29.28-2.925-1.245.375-2.58-.33-2.955-1.575s.33-2.58 1.575-2.955c9-2.73 23.82-2.19 33.165 3.36 1.125.66 1.5 2.115.84 3.24-.675 1.125-2.13 1.5-3.255.84l-.09-.045z"/>
-                </svg>
-            </div>
-            
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#" class="nav-item active"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#" class="nav-item"><i class="fas fa-search"></i> Search</a></li>
-                </ul>
-            </nav>
-
-            <div class="library-section">
-                <div class="library-header">
-                    <span class="nav-item"><i class="fas fa-book"></i> Your Library</span>
-                    <i class="fas fa-plus"></i>
+            <div class="nav-links">
+                <div class="nav-item active" id="home-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
                 </div>
-                <!-- Playlist placeholders could go here -->
+                <div class="nav-item" id="search-link">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search</span>
+                </div>
+            </div>
+
+            <div class="library">
+                <div class="library-header">
+                    <div class="library-title">
+                        <i class="fa-solid fa-lines-leaning"></i>
+                        <span>Your Library</span>
+                    </div>
+                    <i class="fa-solid fa-plus add-btn"></i>
+                </div>
+                
+                <div class="library-items">
+                    <div class="nav-item" id="my-album-link">
+                        <i class="fa-solid fa-compact-disc"></i>
+                        <span>My Album</span>
+                    </div>
+                    <div class="nav-item">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Liked Songs</span>
+                    </div>
+                </div>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="header">
-                <div class="nav-arrows">
-                    <button class="arrow-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="arrow-btn"><i class="fas fa-chevron-right"></i></button>
+            <header class="topbar">
+                <div class="prev-next-btns">
+                    <button class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                <!-- Premium and User icons REMOVED as requested -->
+                <!-- User/Premium icons removed as requested -->
             </header>
 
-            <div class="content-section">
-                <h2 class="section-title">Fresh New Music</h2>
-                <div class="song-grid" id="songGrid">
-                    <!-- Songs will be injected here by JS -->
+            <div class="content-body">
+                <h1 class="greeting">Good evening</h1>
+                
+                <div class="sections-container">
+                    <section class="song-section">
+                        <h2>Top Mixes</h2>
+                        <div class="song-grid" id="song-grid">
+                            <!-- Songs will be injected here by JS -->
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>
 
         <!-- Player Bar -->
         <footer class="player-bar">
-            <div class="current-song">
-                <div class="current-song-img">
-                    <img id="currentAlbumArt" src="https://via.placeholder.com/150" alt="Album Art">
+            <div class="current-song-info">
+                <img src="" alt="Album Art" id="player-album-art">
+                <div class="song-details">
+                    <h4 id="player-song-title">Select a song</h4>
+                    <p id="player-song-artist">to start listening</p>
                 </div>
-                <div class="current-song-info">
-                    <div class="current-song-title" id="currentTitle">Select a song</div>
-                    <div class="current-song-artist" id="currentArtist">Artist Name</div>
-                </div>
-                <button class="control-btn"><i class="far fa-heart"></i></button>
+                <i class="fa-regular fa-heart heart-icon"></i>
             </div>
 
             <div class="player-controls">
                 <div class="control-btns">
-                    <button class="control-btn" id="shuffleBtn"><i class="fas fa-shuffle"></i></button>
-                    <button class="control-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
-                    <button class="control-btn play-pause-btn" id="playPauseBtn">
-                        <i class="fas fa-play" id="playIcon"></i>
-                    </button>
-                    <button class="control-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
-                    <button class="control-btn" id="repeatBtn"><i class="fas fa-repeat"></i></button>
+                    <i class="fa-solid fa-shuffle control-icon" id="shuffle"></i>
+                    <i class="fa-solid fa-backward-step control-icon" id="prev"></i>
+                    <div class="play-pause-btn" id="play-pause">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <i class="fa-solid fa-forward-step control-icon" id="next"></i>
+                    <i class="fa-solid fa-repeat control-icon" id="repeat"></i>
                 </div>
                 <div class="progress-container">
-                    <span class="time-label" id="currentTime">0:00</span>
-                    <div class="progress-bar-wrap" id="progressBar">
-                        <div class="progress-bar-fill" id="progressFill"></div>
+                    <span id="current-time">0:00</span>
+                    <div class="progress-bar-wrapper">
+                        <input type="range" min="0" max="100" value="0" class="progress-bar" id="progress">
                     </div>
-                    <span class="time-label" id="duration">0:00</span>
+                    <span id="duration">0:00</span>
                 </div>
             </div>
 
             <div class="volume-controls">
-                <i class="fas fa-volume-up"></i>
-                <div class="volume-bar-wrap">
-                    <div class="progress-bar-fill" style="width: 70%;"></div>
+                <i class="fa-solid fa-microphone"></i>
+                <i class="fa-solid fa-list-ul"></i>
+                <i class="fa-solid fa-computer"></i>
+                <div class="volume-bar-wrapper">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <input type="range" min="0" max="100" value="70" class="volume-bar" id="volume">
                 </div>
             </div>
         </footer>
     </div>
 
     <!-- Hidden Audio Element -->
-    <audio id="mainAudio" src=""></audio>
+    <audio id="audio-player"></audio>
 
     <script src="script.js"></script>
 </body>
