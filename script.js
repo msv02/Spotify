@@ -167,8 +167,10 @@ function renderSongs(songList) {
         card.className = 'song-card';
         card.innerHTML = `
             <img src="${song.cover}" alt="${song.title}">
-            <h3>${song.title}</h3>
-            <p>${song.artist}</p>
+            <div class="song-details-wrapper">
+                <h3>${song.title}</h3>
+                <p>${song.artist}</p>
+            </div>
             <div class="play-hover-btn">
                 <i class="fa-solid fa-play"></i>
             </div>

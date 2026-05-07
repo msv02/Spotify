@@ -156,6 +156,8 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .song-card:hover {
@@ -449,29 +451,44 @@ body {
     }
 
     .song-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .song-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
         padding: 8px;
+        background-color: transparent; /* List view usually has no card background on mobile */
     }
 
-    .song-card h3 {
-        font-size: 13px;
-        margin-bottom: 4px;
-    }
-
-    .song-card p {
-        font-size: 11px;
+    .song-card:active {
+        background-color: var(--bg-grey);
     }
 
     .song-card img {
-        margin-bottom: 8px;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 0;
+        box-shadow: none;
     }
 
-    .play-hover-btn {
-        display: none; /* Hide hover button on mobile as it's for mouse */
+    .song-card h3 {
+        font-size: 15px;
+        margin-bottom: 2px;
+    }
+
+    .song-card p {
+        font-size: 13px;
+    }
+
+    .song-details-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .content-body {
