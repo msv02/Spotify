@@ -145,6 +145,15 @@ const repeatBtn = document.getElementById('repeat');
 const myAlbumBtn = document.getElementById('my-album-link');
 const homeBtn = document.getElementById('home-link');
 
+// Mobile Nav Buttons
+const mobileHome = document.getElementById('mobile-home');
+const mobileSearch = document.getElementById('mobile-search');
+const mobileLibrary = document.getElementById('mobile-library');
+const mobileMyAlbum = document.getElementById('mobile-my-album');
+
+const mobileNavItems = [mobileHome, mobileSearch, mobileLibrary, mobileMyAlbum];
+const desktopNavItems = [homeBtn, document.getElementById('search-link'), myAlbumBtn];
+
 // Initialize
 function init() {
     renderSongs(songs);
@@ -181,24 +190,33 @@ function loadSong(song) {
 }
 
 function playSong() {
-    isPlaying = true;
-    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-    audio.play();
+    audio.play().catch(error => {
+        console.log("Playback was prevented. Please interact with the page first.", error);
+    });
 }
 
 function pauseSong() {
-    isPlaying = false;
-    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
     audio.pause();
 }
 
 function togglePlay() {
-    if (isPlaying) {
-        pauseSong();
-    } else {
+    if (audio.paused) {
         playSong();
+    } else {
+        pauseSong();
     }
 }
+
+// Update UI based on audio state
+audio.onplay = () => {
+    isPlaying = true;
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+};
+
+audio.onpause = () => {
+    isPlaying = false;
+    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+};
 
 function prevSong() {
     currentSongIndex--;
@@ -277,20 +295,69 @@ repeatBtn.addEventListener('click', () => {
     repeatBtn.style.color = isRepeat ? 'var(--spotify-green)' : 'var(--text-grey)';
 });
 
-// "My Album" functionality - Filter to a specific set (e.g. first 5)
-myAlbumBtn.addEventListener('click', () => {
-    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-    myAlbumBtn.classList.add('active');
+// "My Album" functionality
+function showMyAlbum() {
+    syncActiveNav('my-album');
     renderSongs(songs.slice(0, 5));
     document.querySelector('.greeting').innerText = "My Album";
-});
+}
 
-homeBtn.addEventListener('click', () => {
-    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-    homeBtn.classList.add('active');
+function showHome() {
+    syncActiveNav('home');
     renderSongs(songs);
     document.querySelector('.greeting').innerText = "Good evening";
+}
+
+function syncActiveNav(target) {
+    // Desktop
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    // Mobile
+    document.querySelectorAll('.mobile-nav-item').forEach(item => item.classList.remove('active'));
+
+    if (target === 'home') {
+        homeBtn.classList.add('active');
+        mobileHome.classList.add('active');
+    } else if (target === 'my-album') {
+        myAlbumBtn.classList.add('active');
+        mobileMyAlbum.classList.add('active');
+    } else if (target === 'search') {
+        document.getElementById('search-link').classList.add('active');
+        mobileSearch.classList.add('active');
+    } else if (target === 'library') {
+        mobileLibrary.classList.add('active');
+    }
+}
+
+myAlbumBtn.addEventListener('click', showMyAlbum);
+mobileMyAlbum.addEventListener('click', showMyAlbum);
+
+homeBtn.addEventListener('click', showHome);
+mobileHome.addEventListener('click', showHome);
+
+document.getElementById('search-link').addEventListener('click', () => {
+    syncActiveNav('search');
+    alert("Search feature coming soon!");
+});
+
+mobileSearch.addEventListener('click', () => {
+    syncActiveNav('search');
+    // Just a placeholder for search
+    alert("Search feature coming soon! Showing all songs for now.");
+    showHome();
+});
+
+mobileLibrary.addEventListener('click', () => {
+    syncActiveNav('library');
+    alert("Library feature coming soon!");
 });
 
 // Initialize the app
 init();
+
+// Keyboard Shortcuts
+window.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') {
+        e.preventDefault(); // Prevent scrolling
+        togglePlay();
+    }
+});

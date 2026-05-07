@@ -359,12 +359,42 @@ body {
     accent-color: var(--spotify-green);
 }
 
-/* Responsiveness & Custom Aspect Ratios */
-
-/* Desktop 16:9 / 16:10 */
-@media (min-width: 1024px) {
-    /* Grid layout handles this naturally */
+/* Mobile Navigation */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #282828;
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
 }
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: var(--text-grey);
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.mobile-nav-item i {
+    font-size: 20px;
+}
+
+.mobile-nav-item.active {
+    color: var(--text-white);
+}
+
+/* Responsiveness & Custom Aspect Ratios */
 
 /* Tablet */
 @media (max-width: 1023px) {
@@ -380,20 +410,30 @@ body {
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr var(--player-height) 60px; /* Space for mobile nav */
+        grid-template-rows: 1fr var(--player-height);
+        height: calc(100vh - 65px); /* Subtract mobile nav height */
     }
 
     .sidebar {
-        display: none; /* In a real app we'd add a bottom nav or hamburger */
+        display: none;
     }
     
+    .mobile-nav {
+        display: flex;
+    }
+
     .main-content {
         margin: 0;
         border-radius: 0;
     }
 
     .current-song-info {
-        width: 60%;
+        width: 70%;
+    }
+
+    .current-song-info img {
+        width: 48px;
+        height: 48px;
     }
 
     .player-controls {
@@ -401,7 +441,7 @@ body {
     }
     
     .progress-container {
-        display: none; /* Hide progress bar on mobile player bar to save space */
+        display: none;
     }
 
     .volume-controls {
@@ -419,15 +459,38 @@ body {
 
     .greeting {
         font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .player-bar {
+        border-top: 1px solid #282828;
+        background-color: #121212;
+        margin-bottom: 65px; /* Height of mobile nav */
+    }
+
+    .song-details h4 {
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
     }
 }
 
-/* Specific aspect ratio adjustments if needed */
-/* 9:16 is typical mobile */
-@media (max-aspect-ratio: 9/15) {
-    /* Very tall screens like 9:19.5 */
+/* Handle Very Tall Screens (9:19.5, etc) */
+@media (max-aspect-ratio: 9/18) {
+    .content-body {
+        padding-top: 40px;
+    }
     .song-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+/* Handle Very Wide Screens (21:9) */
+@media (min-aspect-ratio: 21/9) {
+    .container {
+        --sidebar-width: 300px;
     }
 }
 
