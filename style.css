@@ -502,16 +502,67 @@ body {
 
     .player-bar {
         border-top: 1px solid #282828;
-        background-color: #121212;
-        margin-bottom: 65px; /* Height of mobile nav */
+        background-color: rgba(18, 18, 18, 0.95);
+        backdrop-filter: blur(10px);
+        margin-bottom: 65px; /* Above mobile nav */
+        height: 64px; /* Fixed shorter height for phone */
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .current-song-info {
+        width: 80%;
+        gap: 12px;
+    }
+
+    .current-song-info img {
+        width: 44px;
+        height: 44px;
+        border-radius: 4px;
+        margin-bottom: 0;
     }
 
     .song-details h4 {
         font-size: 13px;
+        max-width: 180px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 150px;
+    }
+
+    .song-details p {
+        font-size: 11px;
+    }
+
+    .player-controls {
+        width: 20%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .control-btns {
+        gap: 0;
+    }
+
+    /* Hide extra controls on mobile mini-player to save space */
+    #shuffle, #prev, #next, #repeat {
+        display: none;
+    }
+
+    .play-pause-btn {
+        width: 36px;
+        height: 36px;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .play-pause-btn i {
+        color: white;
+        font-size: 20px;
     }
 }
 
