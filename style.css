@@ -129,6 +129,31 @@ body {
     cursor: pointer;
 }
 
+.search-container {
+    display: none; /* Hidden by default, shown on search click */
+    background-color: var(--text-white);
+    border-radius: 500px;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 16px;
+}
+
+.search-container i {
+    color: black;
+    font-size: 18px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+}
+
 .content-body {
     padding: 24px 32px;
 }
@@ -412,21 +437,44 @@ body {
 @media (max-width: 768px) {
     .container {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr var(--player-height);
-        height: calc(100vh - 65px); /* Subtract mobile nav height */
+        grid-template-rows: 1fr auto;
+        height: 100vh;
     }
 
-    .sidebar {
-        display: none;
-    }
-    
-    .mobile-nav {
-        display: flex;
-    }
-
+    /* Adjust main content to have space at bottom for player and nav */
     .main-content {
         margin: 0;
         border-radius: 0;
+        padding-bottom: 140px; /* Space for player bar + mobile nav */
+    }
+
+    .player-bar {
+        position: fixed;
+        bottom: 65px; /* Above mobile nav */
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #282828;
+        background-color: rgba(18, 18, 18, 0.98);
+        backdrop-filter: blur(10px);
+        height: 64px;
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 90;
+        margin-bottom: 0;
+    }
+
+    /* Hide navigation arrows on mobile search to save space */
+    .prev-next-btns {
+        display: none;
+    }
+
+    /* Only show search bar on mobile when search is active */
+    .search-container {
+        display: none;
+        margin-left: 0;
+        max-width: 100%;
     }
 
     .current-song-info {

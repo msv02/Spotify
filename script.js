@@ -154,6 +154,9 @@ const mobileMyAlbum = document.getElementById('mobile-my-album');
 const mobileNavItems = [mobileHome, mobileSearch, mobileLibrary, mobileMyAlbum];
 const desktopNavItems = [homeBtn, document.getElementById('search-link'), myAlbumBtn];
 
+const searchContainer = document.getElementById('search-container');
+const searchInput = document.getElementById('search-input');
+
 // Initialize
 function init() {
     renderSongs(songs);
@@ -310,11 +313,26 @@ function showHome() {
     document.querySelector('.greeting').innerText = "Good evening";
 }
 
+function showSearch() {
+    syncActiveNav('search');
+    document.querySelector('.greeting').innerText = "Search";
+    renderSongs(songs); // Show all initially
+}
+
 function syncActiveNav(target) {
     // Desktop
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
     // Mobile
     document.querySelectorAll('.mobile-nav-item').forEach(item => item.classList.remove('active'));
+
+    // Handle Search Bar Visibility
+    if (target === 'search') {
+        searchContainer.style.display = 'flex';
+        searchInput.focus();
+    } else {
+        searchContainer.style.display = 'none';
+        searchInput.value = '';
+    }
 
     if (target === 'home') {
         homeBtn.classList.add('active');
@@ -336,16 +354,17 @@ mobileMyAlbum.addEventListener('click', showMyAlbum);
 homeBtn.addEventListener('click', showHome);
 mobileHome.addEventListener('click', showHome);
 
-document.getElementById('search-link').addEventListener('click', () => {
-    syncActiveNav('search');
-    alert("Search feature coming soon!");
-});
+document.getElementById('search-link').addEventListener('click', showSearch);
+mobileSearch.addEventListener('click', showSearch);
 
-mobileSearch.addEventListener('click', () => {
-    syncActiveNav('search');
-    // Just a placeholder for search
-    alert("Search feature coming soon! Showing all songs for now.");
-    showHome();
+// Search Logic
+searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    const filteredSongs = songs.filter(song => 
+        song.title.toLowerCase().includes(query) || 
+        song.artist.toLowerCase().includes(query)
+    );
+    renderSongs(filteredSongs);
 });
 
 mobileLibrary.addEventListener('click', () => {
