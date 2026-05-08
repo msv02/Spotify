@@ -498,6 +498,80 @@ body {
         display: none;
     }
 
+    .quick-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    .quick-card {
+        background-color: var(--bg-grey);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow: hidden;
+        height: 48px;
+    }
+
+    .quick-card img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+    }
+
+    .quick-card span {
+        font-size: 11px;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .horizontal-section {
+        margin-bottom: 24px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
+    }
+
+    .horizontal-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    .horizontal-scroll {
+        display: flex;
+        gap: 16px;
+    }
+
+    .horizontal-card {
+        display: inline-block;
+        width: 140px;
+        vertical-align: top;
+    }
+
+    .horizontal-card img {
+        width: 140px;
+        height: 140px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+    }
+
+    .horizontal-card h3 {
+        font-size: 13px;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .horizontal-card p {
+        font-size: 11px;
+        color: var(--text-grey);
+    }
+
     .song-grid {
         display: flex;
         flex-direction: column;

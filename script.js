@@ -165,11 +165,11 @@ function init() {
     loadSong(songs[currentSongIndex]);
 }
 
-function renderSongs(songList) {
-    songGrid.innerHTML = '';
-    songList.forEach((song, index) => {
+function renderSongs(songList, container = songGrid, isHorizontal = false) {
+    container.innerHTML = '';
+    songList.forEach((song) => {
         const card = document.createElement('div');
-        card.className = 'song-card';
+        card.className = isHorizontal ? 'horizontal-card' : 'song-card';
         card.innerHTML = `
             <img src="${song.cover}" alt="${song.title}">
             <div class="song-details-wrapper">
@@ -185,7 +185,7 @@ function renderSongs(songList) {
             loadSong(song);
             playSong();
         });
-        songGrid.appendChild(card);
+        container.appendChild(card);
     });
 }
 
@@ -326,8 +326,39 @@ function showMyAlbum() {
 
 function showHome() {
     syncActiveNav('home');
-    renderSongs(songs);
     document.querySelector('.greeting').innerText = "Good evening";
+    
+    if (window.innerWidth <= 768) {
+        // Mobile Authentic Layout
+        songGrid.innerHTML = `
+            <div class="quick-links" id="quick-links"></div>
+            <h2 style="font-size: 20px; margin: 24px 0 16px;">Made For You</h2>
+            <div class="horizontal-section">
+                <div class="horizontal-scroll" id="horizontal-scroll"></div>
+            </div>
+            <h2 style="font-size: 20px; margin: 16px 0;">All Songs</h2>
+            <div class="vertical-list" id="vertical-list"></div>
+        `;
+
+        // Render Quick Links (First 6)
+        const qlContainer = document.getElementById('quick-links');
+        songs.slice(0, 6).forEach(song => {
+            const qlCard = document.createElement('div');
+            qlCard.className = 'quick-card';
+            qlCard.innerHTML = `<img src="${song.cover}"><span>${song.title}</span>`;
+            qlCard.onclick = () => { currentSongIndex = songs.indexOf(song); loadSong(song); playSong(); };
+            qlContainer.appendChild(qlCard);
+        });
+
+        // Render Horizontal Scroll (Next 6)
+        renderSongs(songs.slice(6, 12), document.getElementById('horizontal-scroll'), true);
+
+        // Render Remaining
+        renderSongs(songs, document.getElementById('vertical-list'));
+    } else {
+        // Desktop Layout
+        renderSongs(songs);
+    }
 }
 
 function showSearch() {
