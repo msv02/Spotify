@@ -106,9 +106,17 @@ body {
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     z-index: 10;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: var(--text-white);
+    cursor: pointer;
+    padding-right: 16px;
 }
 
 .prev-next-btns {
@@ -436,32 +444,57 @@ body {
 /* Mobile 9:16, 9:19.5 */
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 60px 1fr; /* Slim sidebar on left */
         grid-template-rows: 1fr auto;
         height: 100vh;
     }
 
-    /* Adjust main content to have space at bottom for player and nav */
+    .sidebar {
+        display: flex;
+        padding: 24px 0;
+        align-items: center;
+        width: 60px;
+        border-right: 1px solid #282828;
+    }
+
+    .sidebar .nav-item span, .library-header, .library-title span {
+        display: none; /* Only show icons on slim mobile sidebar */
+    }
+
+    .sidebar .nav-item {
+        padding: 12px;
+        justify-content: center;
+    }
+
+    .mobile-nav {
+        display: none; /* Removed as requested */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* Adjust main content */
     .main-content {
         margin: 0;
         border-radius: 0;
-        padding-bottom: 140px; /* Space for player bar + mobile nav */
+        padding-bottom: 80px;
     }
 
     .player-bar {
         position: fixed;
-        bottom: 65px; /* Above mobile nav */
+        bottom: 0; /* Directly at the bottom now */
         left: 0;
         width: 100%;
         border-top: 1px solid #282828;
         background-color: rgba(18, 18, 18, 0.98);
         backdrop-filter: blur(10px);
-        height: 64px;
-        padding: 0 12px;
+        height: 70px;
+        padding: 0 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        z-index: 90;
+        z-index: 100;
         margin-bottom: 0;
     }
 
