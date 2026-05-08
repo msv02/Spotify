@@ -119,7 +119,7 @@ const songs = [
         url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778174721/TVK_ELECTION_CAMPAIGN_SONG_-_%E0%AE%89%E0%AE%99%E0%AF%8D%E0%AE%95_%E0%AE%B5%E0%AE%BF%E0%AE%9C%E0%AE%AF%E0%AF%8D_%E0%AE%A8%E0%AE%BE_%E0%AE%B5%E0%AE%B0%E0%AF%87%E0%AE%A9%E0%AF%8D__Whistle_%E0%AE%85%E0%AE%9F%E0%AE%BF%E0%AE%95%E0%AF%8D%E0%AE%95_%E0%AE%B0%E0%AF%86%E0%AE%9F%E0%AE%BF%E0%AE%AF%E0%AE%BE__MP3_320K_orrvx2.mp3",
         cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778174737/ab67616d0000b2731e2527b140ee8253064033fa_muhop6.jpg"
     }
-];
+].map(song => ({ ...song, isLiked: false })); // Add isLiked state to all songs
 
 let currentSongIndex = 0;
 let isPlaying = false;
@@ -139,11 +139,13 @@ const songGrid = document.getElementById('song-grid');
 const playerSongTitle = document.getElementById('player-song-title');
 const playerSongArtist = document.getElementById('player-song-artist');
 const playerAlbumArt = document.getElementById('player-album-art');
+const heartIcon = document.querySelector('.heart-icon');
 
 const shuffleBtn = document.getElementById('shuffle');
 const repeatBtn = document.getElementById('repeat');
 const myAlbumBtn = document.getElementById('my-album-link');
 const homeBtn = document.getElementById('home-link');
+const likedSongsBtn = document.getElementById('liked-songs-link');
 
 // Mobile Nav Buttons
 const mobileHome = document.getElementById('mobile-home');
@@ -152,7 +154,7 @@ const mobileLibrary = document.getElementById('mobile-library');
 const mobileMyAlbum = document.getElementById('mobile-my-album');
 
 const mobileNavItems = [mobileHome, mobileSearch, mobileLibrary, mobileMyAlbum];
-const desktopNavItems = [homeBtn, document.getElementById('search-link'), myAlbumBtn];
+const desktopNavItems = [homeBtn, document.getElementById('search-link'), myAlbumBtn, likedSongsBtn];
 
 const searchContainer = document.getElementById('search-container');
 const searchInput = document.getElementById('search-input');
@@ -179,7 +181,7 @@ function renderSongs(songList) {
             </div>
         `;
         card.addEventListener('click', () => {
-            currentSongIndex = index;
+            currentSongIndex = songs.indexOf(song);
             loadSong(song);
             playSong();
         });
@@ -192,6 +194,21 @@ function loadSong(song) {
     playerSongArtist.innerText = song.artist;
     playerAlbumArt.src = song.cover;
     audio.src = song.url;
+    
+    // Update heart icon state
+    updateHeartIcon(song.isLiked);
+}
+
+function updateHeartIcon(isLiked) {
+    if (isLiked) {
+        heartIcon.classList.remove('fa-regular');
+        heartIcon.classList.add('fa-solid');
+        heartIcon.style.color = 'var(--spotify-green)';
+    } else {
+        heartIcon.classList.remove('fa-solid');
+        heartIcon.classList.add('fa-regular');
+        heartIcon.style.color = 'var(--text-grey)';
+    }
 }
 
 function playSong() {
@@ -319,6 +336,17 @@ function showSearch() {
     renderSongs(songs); // Show all initially
 }
 
+function showLikedSongs() {
+    syncActiveNav('liked');
+    const liked = songs.filter(song => song.isLiked);
+    document.querySelector('.greeting').innerText = "Liked Songs";
+    if (liked.length === 0) {
+        songGrid.innerHTML = '<p style="padding: 20px; color: var(--text-grey);">Your liked songs will appear here.</p>';
+    } else {
+        renderSongs(liked);
+    }
+}
+
 function syncActiveNav(target) {
     // Desktop
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
@@ -343,6 +371,8 @@ function syncActiveNav(target) {
     } else if (target === 'search') {
         document.getElementById('search-link').classList.add('active');
         mobileSearch.classList.add('active');
+    } else if (target === 'liked') {
+        likedSongsBtn.classList.add('active');
     } else if (target === 'library') {
         mobileLibrary.classList.add('active');
     }
@@ -354,8 +384,22 @@ mobileMyAlbum.addEventListener('click', showMyAlbum);
 homeBtn.addEventListener('click', showHome);
 mobileHome.addEventListener('click', showHome);
 
+likedSongsBtn.addEventListener('click', showLikedSongs);
+
 document.getElementById('search-link').addEventListener('click', showSearch);
 mobileSearch.addEventListener('click', showSearch);
+
+// Like/Unlike Functionality
+heartIcon.addEventListener('click', () => {
+    const currentSong = songs[currentSongIndex];
+    currentSong.isLiked = !currentSong.isLiked;
+    updateHeartIcon(currentSong.isLiked);
+    
+    // If we are currently viewing Liked Songs, re-render the list
+    if (document.querySelector('.greeting').innerText === "Liked Songs") {
+        showLikedSongs();
+    }
+});
 
 // Search Logic
 searchInput.addEventListener('input', (e) => {
