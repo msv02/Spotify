@@ -1,168 +1,55 @@
 const songs = [
-    {
-        title: "SHERIYA",
-        artist: "ARJN X KDS X RONN",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153085/ARJN_X_KDS_X_RONN_-_SHERIYA_Official_Music_Video___Def_Jam_India___Latest_Malayalam_Rap_Song_MP3_160K_bblede.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159368/ab67616d0000b273dc54baf911bfff7715c66481_dchxzb.jpg"
-    },
-    {
-        title: "Fa9la",
-        artist: "Flipperachi",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153083/Fa9la_-_Flipperachi_Prod._by_DJ_Outlaw_Official_Audio___%D9%81%D8%B5%D9%84%D8%A9_-_%D9%81%D9%84%D9%8A%D8%A8%D8%B1%D8%A7%D8%AA%D8%B4%D9%8A_MP3_160K_m99eot.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159370/ab67616d0000b2733d8df7193d625455be369fc3_hlldot.jpg"
-    },
-    {
-        title: "Alappuzha Sandhayil",
-        artist: "Ken Karunaas, GV Prakash",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153081/Alappuzha_Sandhayil_Video_Song___Youth___Ken_Karunaas___GV_Prakash___Paarvathaa_Entertainments_MP3_320K_xt99yr.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159374/Alappuzha_sandhayil_v0awgg.jpg"
-    },
-    {
-        title: "Mutta Kalakki",
-        artist: "Ken Karunaas, GV Prakash",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153077/Mutta_Kalakki_Music_Video___Youth___Ken_Karunaas___Suraj_Venjaramoodu___GV_Prakash_Kumar_MP3_320K_iq87wc.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159379/mutta_kalakki_dflfdz.jpg"
-    },
-    {
-        title: "Paranthene Penne",
-        artist: "Ken Karunaas, GV Prakash",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153076/Paranthene_Penne_Music_Video___Youth___Ken_Karunaas___Anishma___GV_Prakash_Kumar_MP3_320K_t63i4p.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159381/Paranthene-Penne-From-Youth-Tamil-2026-20260219193543-500x500_kedjvn.jpg"
-    },
-    {
-        title: "KALYANI",
-        artist: "ARJN x KDS x FIFTY4 x RONN",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153074/ARJN_x_KDS_x_FIFTY4_x_RONN_-_KALYANI_Official_Lyrical_Video_MP3_160K_yb9r2q.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159372/ab67616d0000b2738c681e9dd49d13f7d223f8bf_fb5bnw.jpg"
-    },
-    {
-        title: "Loveah Sollitalea",
-        artist: "Ken Karunaas, GV Prakash",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153071/Loveah_Sollitalea_Official_Video_Song___Ken_Karunaas___GV_Prakash___Youth_MP3_320K_ayzhdx.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159377/loveah_sollitalea_tbjmpy.jpg"
-    },
-    {
-        title: "Aasa Pulla",
-        artist: "GV Prakash, Ken Karunaas",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153067/Aasa_Pulla_Music_Video___GV_Prakash_Kumar___Ken_Karunaas___Youth_MP3_320K_magmh9.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159367/Aasa-Pulla-From-Youth-Tamil-2026-20260227185734-500x500-2_raabww.jpg"
-    },
-    {
-        title: "Jilpanso",
-        artist: "Ken Karunaas, GV Prakash",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153065/Jilpanso_Music_Video___Youth___Ken_Karunaas___GV_Prakash_MP3_320K_xsdf2c.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159375/jilpanso_xjphkh.jpg"
-    },
-    {
-        title: "AA 23 THEME",
-        artist: "Allu Arjun, Anirudh",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153060/AA_23_THEME_Full_Audio___Icon_Star_Allu_Arjun___Lokesh_Kanagaraj___Anirudh___Mythri_Movie_Makers_MP3_160K_tfwiyi.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159370/ab67616d0000b273f8aa25d7dd200235302ffc28_pn9qsc.jpg"
-    },
-    {
-        title: "Enakena",
-        artist: "Anirudh Ravichander",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163119/Enakena_Music_Video__Love_Insurance_Kompany_Pradeep_Ranganathan_Anirudh_Vignesh_Shivan_Lalit_Kumar_MP3_320K_pnaizr.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163163/ab67616d00001e0233c6ec99236141977db9f410_lyoegd.jpg"
-    },
-    {
-        title: "Adaavadi",
-        artist: "Anirudh Ravichander",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163105/Adaavadi_Music_Video___LIK___Pradeep_Ranganathan___Anirudh_l_Vignesh_Shivan___Krithi_Shetty_MP3_320K_e5r9be.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163163/ab67616d00001e0215ddf097f78e749a9eda365c_y2jhml.jpg"
-    },
-    {
-        title: "Oorum Blood",
-        artist: "SaiAbhyankkar, Paal Dabba",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163104/Oorum_Blood_Movie_Version___Dude___Pradeep_R__Mamitha____SaiAbhyankkar__Keerthiswaran___Paal_Dabba_MP3_320K_w5e7to.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b2737b5fd77735d2fa9cc7e982df_gacog7.jpg"
-    },
-    {
-        title: "Singari",
-        artist: "SaiAbhyankkar",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163115/Singari_Video_Song___Dude___Pradeep_Ranganathan__Mamitha_Baiju____SaiAbhyankkar___Keerthiswaran_MP3_320K_b0jg51.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163160/ab67616d0000b273c97794bc5f05f822f0be7ac9_o1wodb.jpg"
-    },
-    {
-        title: "Pavazha Malli",
-        artist: "SaiAbhyankkar, Shruti Haasan",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163100/_SaiAbhyankkar_-_Pavazha_Malli_Music_Video___Kayadu___Shruti_Haasan___Vivek___Thejo___Think_Indie_MP3_320K_ikpkim.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b273f5f2a6705dfe3c2fe11028c8_lsaiem.jpg"
-    },
-    {
-        title: "Jana Nayagan - Oru Pere",
-        artist: "Anirudh Ravichander",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163114/Jana_Nayagan_Oru_Pere_Varalaaru_Lyrical___Thalapathy_Vijay___H_Vinoth__Anirudh__KVN__Vishal_Mishra_MP3_320K_uno1ni.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b273e941e71a3b4c4cb761097dc5_ylsrxs.jpg"
-    },
-    {
-        title: "Jana Nayagan - Raavana Mavandaa",
-        artist: "Anirudh Ravichander",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163105/Jana_Nayagan_-_Raavana_Mavandaa_Lyrical___Thalapathy_Vijay___Pooja_Hegde___H_Vinoth___Anirudh___KVN_MP3_320K_g7hdza.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163162/ab67616d00001e02e0807b4138d187c74233853b_yj3s3r.jpg"
-    },
-    {
-        title: "Thalapathy Kacheri",
-        artist: "Anirudh Ravichander",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163100/Jana_Nayagan_Thalapathy_Kacheri_Lyric_Video__Thalapathy_Vijay__H_Vinoth__Anirudh__Pooja_Hegde__KVN_MP3_320K_zc9fij.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d00001e02e2b41d0e6e8205e913701a42_umkkme.jpg"
-    },
-    {
-        title: "Aura 10/10",
-        artist: "Hiphop Tamizha",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163113/Aura_10_10_-_Music_Video___Meesaya_Murukku_2___Hiphop_Tamizha___Ketika_Sharma_MP3_320K_wvoddi.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163162/ab67616d0000b273452dc35c269e2be9de5c2a85_luywpo.jpg"
-    },
-    {
-        title: "Whistle",
-        artist: "TVK Election Song",
-        url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778174721/TVK_ELECTION_CAMPAIGN_SONG_-_%E0%AE%89%E0%AE%99%E0%AF%8D%E0%AE%95_%E0%AE%B5%E0%AE%BF%E0%AE%9C%E0%AE%AF%E0%AF%8D_%E0%AE%A8%E0%AE%BE_%E0%AE%B5%E0%AE%B0%E0%AF%87%E0%AE%A9%E0%AF%8D__Whistle_%E0%AE%85%E0%AE%9F%E0%AE%BF%E0%AE%95%E0%AF%8D%E0%AE%95_%E0%AE%B0%E0%AF%86%E0%AE%9F%E0%AE%BF%E0%AE%AF%E0%AE%BE__MP3_320K_orrvx2.mp3",
-        cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778174737/ab67616d0000b2731e2527b140ee8253064033fa_muhop6.jpg"
-    }
-].map(song => ({ ...song, isLiked: false })); // Add isLiked state to all songs
+    { title: "SHERIYA", artist: "ARJN X KDS X RONN", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153085/ARJN_X_KDS_X_RONN_-_SHERIYA_Official_Music_Video___Def_Jam_India___Latest_Malayalam_Rap_Song_MP3_160K_bblede.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159368/ab67616d0000b273dc54baf911bfff7715c66481_dchxzb.jpg" },
+    { title: "Fa9la", artist: "Flipperachi", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153083/Fa9la_-_Flipperachi_Prod._by_DJ_Outlaw_Official_Audio___%D9%81%D8%B5%D9%84%D8%A9_-_%D9%81%D9%84%D9%8A%D8%A8%D8%B1%D8%AAT%D8%B4%D9%8A_MP3_160K_m99eot.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159370/ab67616d0000b2733d8df7193d625455be369fc3_hlldot.jpg" },
+    { title: "Alappuzha Sandhayil", artist: "Ken Karunaas, GV Prakash", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153081/Alappuzha_Sandhayil_Video_Song___Youth___Ken_Karunaas___GV_Prakash___Paarvathaa_Entertainments_MP3_320K_xt99yr.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159374/Alappuzha_sandhayil_v0awgg.jpg" },
+    { title: "Mutta Kalakki", artist: "Ken Karunaas, GV Prakash", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153077/Mutta_Kalakki_Music_Video___Youth___Ken_Karunaas___Suraj_Venjaramoodu___GV_Prakash_Kumar_MP3_320K_iq87wc.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159379/mutta_kalakki_dflfdz.jpg" },
+    { title: "Paranthene Penne", artist: "Ken Karunaas, GV Prakash", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153076/Paranthene_Penne_Music_Video___Youth___Ken_Karunaas___Anishma___GV_Prakash_Kumar_MP3_320K_t63i4p.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159381/Paranthene-Penne-From-Youth-Tamil-2026-20260219193543-500x500_kedjvn.jpg" },
+    { title: "KALYANI", artist: "ARJN x KDS x FIFTY4 x RONN", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153074/ARJN_x_KDS_x_FIFTY4_x_RONN_-_KALYANI_Official_Lyrical_Video_MP3_160K_yb9r2q.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159372/ab67616d0000b2738c681e9dd49d13f7d223f8bf_fb5bnw.jpg" },
+    { title: "Loveah Sollitalea", artist: "Ken Karunaas, GV Prakash", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153071/Loveah_Sollitalea_Official_Video_Song___Ken_Karunaas___GV_Prakash___Youth_MP3_320K_ayzhdx.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159377/loveah_sollitalea_tbjmpy.jpg" },
+    { title: "Aasa Pulla", artist: "GV Prakash, Ken Karunaas", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153067/Aasa_Pulla_Music_Video___GV_Prakash_Kumar___Ken_Karunaas___Youth_MP3_320K_magmh9.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159367/Aasa-Pulla-From-Youth-Tamil-2026-20260227185734-500x500-2_raabww.jpg" },
+    { title: "Jilpanso", artist: "Ken Karunaas, GV Prakash", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153065/Jilpanso_Music_Video___Youth___Ken_Karunaas___GV_Prakash_MP3_320K_xsdf2c.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159375/jilpanso_xjphkh.jpg" },
+    { title: "AA 23 THEME", artist: "Allu Arjun, Anirudh", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778153060/AA_23_THEME_Full_Audio___Icon_Star_Allu_Arjun___Lokesh_Kanagaraj___Anirudh___Mythri_Movie_Makers_MP3_160K_tfwiyi.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778159370/ab67616d0000b273f8aa25d7dd200235302ffc28_pn9qsc.jpg" },
+    { title: "Enakena", artist: "Anirudh Ravichander", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163119/Enakena_Music_Video__Love_Insurance_Kompany_Pradeep_Ranganathan_Anirudh_Vignesh_Shivan_Lalit_Kumar_MP3_320K_pnaizr.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163163/ab67616d00001e0233c6ec99236141977db9f410_lyoegd.jpg" },
+    { title: "Adaavadi", artist: "Anirudh Ravichander", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163105/Adaavadi_Music_Video___LIK___Pradeep_Ranganathan___Anirudh_l_Vignesh_Shivan___Krithi_Shetty_MP3_320K_e5r9be.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163163/ab67616d00001e0215ddf097f78e749a9eda365c_y2jhml.jpg" },
+    { title: "Oorum Blood", artist: "SaiAbhyankkar, Paal Dabba", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163104/Oorum_Blood_Movie_Version___Dude___Pradeep_R__Mamitha____SaiAbhyankkar__Keerthiswaran___Paal_Dabba_MP3_320K_w5e7to.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b2737b5fd77735d2fa9cc7e982df_gacog7.jpg" },
+    { title: "Singari", artist: "SaiAbhyankkar", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163115/Singari_Video_Song___Dude___Pradeep_Ranganathan__Mamitha_Baiju____SaiAbhyankkar___Keerthiswaran_MP3_320K_b0jg51.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163160/ab67616d0000b273c97794bc5f05f822f0be7ac9_o1wodb.jpg" },
+    { title: "Pavazha Malli", artist: "SaiAbhyankkar, Shruti Haasan", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163100/_SaiAbhyankkar_-_Pavazha_Malli_Music_Video___Kayadu___Shruti_Haasan___Vivek___Thejo___Think_Indie_MP3_320K_ikpkim.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b273f5f2a6705dfe3c2fe11028c8_lsaiem.jpg" },
+    { title: "Jana Nayagan - Oru Pere", artist: "Anirudh Ravichander", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163114/Jana_Nayagan_Oru_Pere_Varalaaru_Lyrical___Thalapathy_Vijay___H_Vinoth__Anirudh__KVN__Vishal_Mishra_MP3_320K_uno1ni.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d0000b273e941e71a3b4c4cb761097dc5_ylsrxs.jpg" },
+    { title: "Jana Nayagan - Raavana Mavandaa", artist: "Anirudh Ravichander", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163105/Jana_Nayagan_-_Raavana_Mavandaa_Lyrical___Thalapathy_Vijay___Pooja_Hegde___H_Vinoth___Anirudh___KVN_MP3_320K_g7hdza.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163162/ab67616d00001e02e0807b4138d187c74233853b_yj3s3r.jpg" },
+    { title: "Thalapathy Kacheri", artist: "Anirudh Ravichander", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163100/Jana_Nayagan_Thalapathy_Kacheri_Lyric_Video__Thalapathy_Vijay__H_Vinoth__Anirudh__Pooja_Hegde__KVN_MP3_320K_zc9fij.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163161/ab67616d00001e02e2b41d0e6e8205e913701a42_umkkme.jpg" },
+    { title: "Aura 10/10", artist: "Hiphop Tamizha", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778163113/Aura_10_10_-_Music_Video___Meesaya_Murukku_2___Hiphop_Tamizha___Ketika_Sharma_MP3_320K_wvoddi.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778163162/ab67616d0000b273452dc35c269e2be9de5c2a85_luywpo.jpg" },
+    { title: "Whistle", artist: "TVK Election Song", url: "https://res.cloudinary.com/dpj4mbgbk/video/upload/v1778174721/TVK_ELECTION_CAMPAIGN_SONG_-_%E0%AE%89%E0%AE%99%E0%AF%8D%E0%AE%95_%E0%AE%B5%E0%AE%BF%E0%AE%9C%E0%AE%AF%E0%AF%8D_%E0%AE%A8%E0%AE%BE_%E0%AE%B5%E0%AE%B0%E0%AF%87%E0%AE%A9%E0%AF%8D__Whistle_%E0%AE%85%E0%AE%9F%E0%AE%BF%E0%AE%95%E0%AF%8D%E0%AE%95_%E0%AE%B0%E0%AF%86%E0%AE%9F%E0%AE%BF%E0%AE%AF%E0%AE%BE__MP3_320K_orrvx2.mp3", cover: "https://res.cloudinary.com/dpj4mbgbk/image/upload/v1778174737/ab67616d0000b2731e2527b140ee8253064033fa_muhop6.jpg" }
+].map(song => ({ ...song, isLiked: false }));
 
 let currentSongIndex = 0;
-let isPlaying = false;
 let isShuffle = false;
 let isRepeat = false;
 
 const audio = document.getElementById('audio-player');
-const playPauseBtn = document.getElementById('play-pause');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const progress = document.getElementById('progress');
-const volume = document.getElementById('volume');
-const currentTimeEl = document.getElementById('current-time');
-const durationEl = document.getElementById('duration');
 const songGrid = document.getElementById('song-grid');
-
-const playerSongTitle = document.getElementById('player-song-title');
-const playerSongArtist = document.getElementById('player-song-artist');
-const playerAlbumArt = document.getElementById('player-album-art');
-const heartIcon = document.querySelector('.heart-icon');
-
-const shuffleBtn = document.getElementById('shuffle');
-const repeatBtn = document.getElementById('repeat');
 const myAlbumBtn = document.getElementById('my-album-link');
 const homeBtn = document.getElementById('home-link');
 const likedSongsBtn = document.getElementById('liked-songs-link');
-
-// Mobile Nav Buttons
-const mobileHome = document.getElementById('mobile-home');
-const mobileSearch = document.getElementById('mobile-search');
-const mobileLibrary = document.getElementById('mobile-library');
-const mobileMyAlbum = document.getElementById('mobile-my-album');
-
-const mobileNavItems = [mobileHome, mobileSearch, mobileLibrary, mobileMyAlbum];
-const desktopNavItems = [homeBtn, document.getElementById('search-link'), myAlbumBtn, likedSongsBtn];
-
 const searchContainer = document.getElementById('search-container');
 const searchInput = document.getElementById('search-input');
 
-// Initialize
+// Player Page Elements
+const playerPage = document.getElementById('player-page');
+const backBtn = document.getElementById('player-back-btn');
+const bigAlbumArt = document.getElementById('big-album-art');
+const bigSongTitle = document.getElementById('big-song-title');
+const bigSongArtist = document.getElementById('big-song-artist');
+const bigPlayPause = document.getElementById('big-play-pause');
+const bigProgress = document.getElementById('big-progress');
+const bigCurrentTime = document.getElementById('big-current-time');
+const bigDuration = document.getElementById('big-duration');
+const bigNext = document.getElementById('big-next');
+const bigPrev = document.getElementById('big-prev');
+const bigShuffle = document.getElementById('big-shuffle');
+const bigRepeat = document.getElementById('big-repeat');
+
 function init() {
-    renderSongs(songs);
-    loadSong(songs[currentSongIndex]);
+    showHome();
 }
 
 function renderSongs(songList, container = songGrid, isHorizontal = false) {
@@ -176,187 +63,136 @@ function renderSongs(songList, container = songGrid, isHorizontal = false) {
                 <h3>${song.title}</h3>
                 <p>${song.artist}</p>
             </div>
-            <div class="play-hover-btn">
-                <i class="fa-solid fa-play"></i>
-            </div>
+            <div class="play-hover-btn"><i class="fa-solid fa-play"></i></div>
         `;
-        card.addEventListener('click', () => {
-            currentSongIndex = songs.indexOf(song);
-            loadSong(song);
-            playSong();
-        });
+        card.onclick = () => openPlayerPage(song);
         container.appendChild(card);
     });
 }
 
-function loadSong(song) {
-    playerSongTitle.innerText = song.title;
-    playerSongArtist.innerText = song.artist;
-    playerAlbumArt.src = song.cover;
+function openPlayerPage(song) {
+    currentSongIndex = songs.indexOf(song);
+    updatePlayerUI(song);
+    playerPage.style.display = 'flex';
+    setTimeout(() => playerPage.classList.add('active'), 10);
     audio.src = song.url;
+    audio.play();
+}
+
+function closePlayerPage() {
+    playerPage.classList.remove('active');
+    setTimeout(() => playerPage.style.display = 'none', 400);
+}
+
+function updatePlayerUI(song) {
+    bigAlbumArt.src = song.cover;
+    bigSongTitle.innerText = song.title;
+    bigSongArtist.innerText = song.artist;
     
-    // Update heart icon state
-    updateHeartIcon(song.isLiked);
-}
-
-function updateHeartIcon(isLiked) {
-    if (isLiked) {
-        heartIcon.classList.remove('fa-regular');
-        heartIcon.classList.add('fa-solid');
-        heartIcon.style.color = 'var(--spotify-green)';
-    } else {
-        heartIcon.classList.remove('fa-solid');
-        heartIcon.classList.add('fa-regular');
-        heartIcon.style.color = 'var(--text-grey)';
-    }
-}
-
-function playSong() {
-    audio.play().catch(error => {
-        console.log("Playback was prevented. Please interact with the page first.", error);
-    });
-}
-
-function pauseSong() {
-    audio.pause();
+    // Update colors based on like state if needed
+    const heart = document.querySelector('.big-heart');
+    heart.style.color = song.isLiked ? 'var(--spotify-green)' : 'var(--text-grey)';
+    heart.className = song.isLiked ? 'fa-solid fa-heart big-heart' : 'fa-regular fa-heart big-heart';
 }
 
 function togglePlay() {
     if (audio.paused) {
-        playSong();
+        audio.play();
+        bigPlayPause.innerHTML = '<i class="fa-solid fa-pause"></i>';
     } else {
-        pauseSong();
+        audio.pause();
+        bigPlayPause.innerHTML = '<i class="fa-solid fa-play"></i>';
     }
-}
-
-// Update UI based on audio state
-audio.onplay = () => {
-    isPlaying = true;
-    playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
-};
-
-audio.onpause = () => {
-    isPlaying = false;
-    playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
-};
-
-function prevSong() {
-    currentSongIndex--;
-    if (currentSongIndex < 0) {
-        currentSongIndex = songs.length - 1;
-    }
-    loadSong(songs[currentSongIndex]);
-    playSong();
 }
 
 function nextSong() {
     if (isShuffle) {
         currentSongIndex = Math.floor(Math.random() * songs.length);
     } else {
-        currentSongIndex++;
-        if (currentSongIndex >= songs.length) {
-            currentSongIndex = 0;
-        }
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
     }
-    loadSong(songs[currentSongIndex]);
-    playSong();
+    const song = songs[currentSongIndex];
+    updatePlayerUI(song);
+    audio.src = song.url;
+    audio.play();
 }
 
-function updateProgress(e) {
-    const { duration, currentTime } = e.srcElement;
-    const progressPercent = (currentTime / duration) * 100;
-    progress.value = progressPercent;
-
-    // Update time displays
-    currentTimeEl.innerText = formatTime(currentTime);
-    durationEl.innerText = isNaN(duration) ? "0:00" : formatTime(duration);
-}
-
-function setProgress(e) {
-    const width = this.clientWidth;
-    const clickX = e.offsetX;
-    const duration = audio.duration;
-    audio.currentTime = (progress.value / 100) * duration;
-}
-
-function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+function prevSong() {
+    currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+    const song = songs[currentSongIndex];
+    updatePlayerUI(song);
+    audio.src = song.url;
+    audio.play();
 }
 
 // Event Listeners
-playPauseBtn.addEventListener('click', togglePlay);
-prevBtn.addEventListener('click', prevSong);
-nextBtn.addEventListener('click', nextSong);
-audio.addEventListener('timeupdate', updateProgress);
-progress.addEventListener('input', () => {
-    const duration = audio.duration;
-    audio.currentTime = (progress.value / 100) * duration;
-});
+backBtn.onclick = closePlayerPage;
+bigPlayPause.onclick = togglePlay;
+bigNext.onclick = nextSong;
+bigPrev.onclick = prevSong;
 
-volume.addEventListener('input', (e) => {
-    audio.volume = e.target.value / 100;
-});
+bigShuffle.onclick = () => {
+    isShuffle = !isShuffle;
+    bigShuffle.style.color = isShuffle ? 'var(--spotify-green)' : 'var(--text-grey)';
+};
 
-audio.addEventListener('ended', () => {
+bigRepeat.onclick = () => {
+    isRepeat = !isRepeat;
+    bigRepeat.style.color = isRepeat ? 'var(--spotify-green)' : 'var(--text-grey)';
+};
+
+audio.ontimeupdate = () => {
+    const percent = (audio.currentTime / audio.duration) * 100;
+    bigProgress.value = percent || 0;
+    bigCurrentTime.innerText = formatTime(audio.currentTime);
+    bigDuration.innerText = isNaN(audio.duration) ? "0:00" : formatTime(audio.duration);
+};
+
+bigProgress.oninput = () => {
+    audio.currentTime = (bigProgress.value / 100) * audio.duration;
+};
+
+audio.onended = () => {
     if (isRepeat) {
-        playSong();
+        audio.play();
     } else {
         nextSong();
     }
-});
+};
 
-shuffleBtn.addEventListener('click', () => {
-    isShuffle = !isShuffle;
-    shuffleBtn.style.color = isShuffle ? 'var(--spotify-green)' : 'var(--text-grey)';
-});
+audio.onplay = () => bigPlayPause.innerHTML = '<i class="fa-solid fa-pause"></i>';
+audio.onpause = () => bigPlayPause.innerHTML = '<i class="fa-solid fa-play"></i>';
 
-repeatBtn.addEventListener('click', () => {
-    isRepeat = !isRepeat;
-    repeatBtn.style.color = isRepeat ? 'var(--spotify-green)' : 'var(--text-grey)';
-});
-
-// "My Album" functionality
-function showMyAlbum() {
-    syncActiveNav('my-album');
-    renderSongs(songs.slice(0, 5));
-    document.querySelector('.greeting').innerText = "My Album";
+function formatTime(time) {
+    const mins = Math.floor(time / 60);
+    const secs = Math.floor(time % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
+// Navigation Logic
 function showHome() {
     syncActiveNav('home');
     document.querySelector('.greeting').innerText = "Good evening";
     
     if (window.innerWidth <= 768) {
-        // Mobile Authentic Layout
         songGrid.innerHTML = `
             <div class="quick-links" id="quick-links"></div>
             <h2 style="font-size: 20px; margin: 24px 0 16px;">Made For You</h2>
-            <div class="horizontal-section">
-                <div class="horizontal-scroll" id="horizontal-scroll"></div>
-            </div>
+            <div class="horizontal-section"><div class="horizontal-scroll" id="horizontal-scroll"></div></div>
             <h2 style="font-size: 20px; margin: 16px 0;">All Songs</h2>
             <div class="vertical-list" id="vertical-list"></div>
         `;
-
-        // Render Quick Links (First 6)
         const qlContainer = document.getElementById('quick-links');
         songs.slice(0, 6).forEach(song => {
             const qlCard = document.createElement('div');
             qlCard.className = 'quick-card';
             qlCard.innerHTML = `<img src="${song.cover}"><span>${song.title}</span>`;
-            qlCard.onclick = () => { currentSongIndex = songs.indexOf(song); loadSong(song); playSong(); };
+            qlCard.onclick = () => openPlayerPage(song);
             qlContainer.appendChild(qlCard);
         });
-
-        // Render Horizontal Scroll (Next 6)
         renderSongs(songs.slice(6, 12), document.getElementById('horizontal-scroll'), true);
-
-        // Render Remaining
         renderSongs(songs, document.getElementById('vertical-list'));
     } else {
-        // Desktop Layout
         renderSongs(songs);
     }
 }
@@ -364,7 +200,7 @@ function showHome() {
 function showSearch() {
     syncActiveNav('search');
     document.querySelector('.greeting').innerText = "Search";
-    renderSongs(songs); // Show all initially
+    renderSongs(songs);
 }
 
 function showLikedSongs() {
@@ -379,81 +215,41 @@ function showLikedSongs() {
 }
 
 function syncActiveNav(target) {
-    // Desktop
     document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-    // Mobile
-    document.querySelectorAll('.mobile-nav-item').forEach(item => item.classList.remove('active'));
-
-    // Handle Search Bar Visibility
-    if (target === 'search') {
-        searchContainer.style.display = 'flex';
-        searchInput.focus();
-    } else {
-        searchContainer.style.display = 'none';
-        searchInput.value = '';
-    }
-
-    if (target === 'home') {
-        homeBtn.classList.add('active');
-        mobileHome.classList.add('active');
-    } else if (target === 'my-album') {
-        myAlbumBtn.classList.add('active');
-        mobileMyAlbum.classList.add('active');
-    } else if (target === 'search') {
-        document.getElementById('search-link').classList.add('active');
-        mobileSearch.classList.add('active');
-    } else if (target === 'liked') {
-        likedSongsBtn.classList.add('active');
-    } else if (target === 'library') {
-        mobileLibrary.classList.add('active');
-    }
+    searchContainer.style.display = (target === 'search') ? 'flex' : 'none';
+    if (target === 'home') homeBtn.classList.add('active');
+    else if (target === 'my-album') myAlbumBtn.classList.add('active');
+    else if (target === 'search') document.getElementById('search-link').classList.add('active');
+    else if (target === 'liked') likedSongsBtn.classList.add('active');
 }
 
-myAlbumBtn.addEventListener('click', showMyAlbum);
-mobileMyAlbum.addEventListener('click', showMyAlbum);
+myAlbumBtn.onclick = () => {
+    syncActiveNav('my-album');
+    renderSongs(songs.slice(0, 5));
+    document.querySelector('.greeting').innerText = "My Album";
+};
+homeBtn.onclick = showHome;
+likedSongsBtn.onclick = showLikedSongs;
+document.getElementById('search-link').onclick = showSearch;
 
-homeBtn.addEventListener('click', showHome);
-mobileHome.addEventListener('click', showHome);
-
-likedSongsBtn.addEventListener('click', showLikedSongs);
-
-document.getElementById('search-link').addEventListener('click', showSearch);
-mobileSearch.addEventListener('click', showSearch);
-
-// Like/Unlike Functionality
-heartIcon.addEventListener('click', () => {
-    const currentSong = songs[currentSongIndex];
-    currentSong.isLiked = !currentSong.isLiked;
-    updateHeartIcon(currentSong.isLiked);
-    
-    // If we are currently viewing Liked Songs, re-render the list
-    if (document.querySelector('.greeting').innerText === "Liked Songs") {
-        showLikedSongs();
-    }
-});
-
-// Search Logic
-searchInput.addEventListener('input', (e) => {
+searchInput.oninput = (e) => {
     const query = e.target.value.toLowerCase();
-    const filteredSongs = songs.filter(song => 
-        song.title.toLowerCase().includes(query) || 
-        song.artist.toLowerCase().includes(query)
-    );
-    renderSongs(filteredSongs);
-});
+    const filtered = songs.filter(s => s.title.toLowerCase().includes(query) || s.artist.toLowerCase().includes(query));
+    renderSongs(filtered);
+};
 
-mobileLibrary.addEventListener('click', () => {
-    syncActiveNav('library');
-    alert("Library feature coming soon!");
-});
+document.querySelector('.big-heart').onclick = () => {
+    const s = songs[currentSongIndex];
+    s.isLiked = !s.isLiked;
+    updatePlayerUI(s);
+};
 
-// Initialize the app
 init();
 
-// Keyboard Shortcuts
-window.addEventListener('keydown', (e) => {
-    if (e.code === 'Space') {
-        e.preventDefault(); // Prevent scrolling
+// Spacebar shortcut
+window.onkeydown = (e) => {
+    if (e.code === 'Space' && playerPage.classList.contains('active')) {
+        e.preventDefault();
         togglePlay();
     }
-});
+};

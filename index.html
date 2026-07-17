@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" href="https://res.cloudinary.com/dbqd8ehhf/image/upload/v1784309603/51rttY7a_9L._h1__cyzfpb.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -75,68 +76,55 @@
                 </div>
             </div>
         </main>
-
-        <!-- Player Bar -->
-        <footer class="player-bar">
-            <div class="current-song-info">
-                <img src="" alt="Album Art" id="player-album-art">
-                <div class="song-details">
-                    <h4 id="player-song-title">Select a song</h4>
-                    <p id="player-song-artist">to start listening</p>
-                </div>
-                <i class="fa-regular fa-heart heart-icon"></i>
-            </div>
-
-            <div class="player-controls">
-                <div class="control-btns">
-                    <i class="fa-solid fa-shuffle control-icon" id="shuffle"></i>
-                    <i class="fa-solid fa-backward-step control-icon" id="prev"></i>
-                    <div class="play-pause-btn" id="play-pause">
-                        <i class="fa-solid fa-play"></i>
-                    </div>
-                    <i class="fa-solid fa-forward-step control-icon" id="next"></i>
-                    <i class="fa-solid fa-repeat control-icon" id="repeat"></i>
-                </div>
-                <div class="progress-container">
-                    <span id="current-time">0:00</span>
-                    <div class="progress-bar-wrapper">
-                        <input type="range" min="0" max="100" value="0" class="progress-bar" id="progress">
-                    </div>
-                    <span id="duration">0:00</span>
-                </div>
-            </div>
-
-            <div class="volume-controls">
-                <i class="fa-solid fa-microphone"></i>
-                <i class="fa-solid fa-list-ul"></i>
-                <i class="fa-solid fa-computer"></i>
-                <div class="volume-bar-wrapper">
-                    <i class="fa-solid fa-volume-high"></i>
-                    <input type="range" min="0" max="100" value="70" class="volume-bar" id="volume">
-                </div>
-            </div>
-        </footer>
     </div>
 
-    <!-- Mobile Bottom Navigation -->
-    <nav class="mobile-nav">
-        <div class="mobile-nav-item active" id="mobile-home">
-            <i class="fa-solid fa-house"></i>
-            <span>Home</span>
+    <!-- Now Playing Page (Dedicated Player) -->
+    <div class="player-page" id="player-page">
+        <header class="player-top">
+            <button class="back-btn" id="player-back-btn"><i class="fa-solid fa-chevron-down"></i></button>
+            <span>PLAYING FROM YOUR LIBRARY</span>
+            <button class="more-btn"><i class="fa-solid fa-ellipsis"></i></button>
+        </header>
+
+        <div class="player-content">
+            <div class="album-art-container">
+                <img src="" alt="Album Art" id="big-album-art">
+            </div>
+            
+            <div class="song-meta">
+                <div class="meta-text">
+                    <h2 id="big-song-title">Song Title</h2>
+                    <p id="big-song-artist">Artist Name</p>
+                </div>
+                <i class="fa-regular fa-heart big-heart"></i>
+            </div>
+
+            <div class="player-controls-container">
+                <div class="progress-section">
+                    <input type="range" min="0" max="100" value="0" class="big-progress-bar" id="big-progress">
+                    <div class="time-info">
+                        <span id="big-current-time">0:00</span>
+                        <span id="big-duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="main-btns">
+                    <i class="fa-solid fa-shuffle big-control" id="big-shuffle"></i>
+                    <i class="fa-solid fa-backward-step big-control" id="big-prev"></i>
+                    <div class="big-play-pause" id="big-play-pause">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <i class="fa-solid fa-forward-step big-control" id="big-next"></i>
+                    <i class="fa-solid fa-repeat big-control" id="big-repeat"></i>
+                </div>
+
+                <div class="extra-btns">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <i class="fa-solid fa-list-ul"></i>
+                </div>
+            </div>
         </div>
-        <div class="mobile-nav-item" id="mobile-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <span>Search</span>
-        </div>
-        <div class="mobile-nav-item" id="mobile-library">
-            <i class="fa-solid fa-lines-leaning"></i>
-            <span>Library</span>
-        </div>
-        <div class="mobile-nav-item" id="mobile-my-album">
-            <i class="fa-solid fa-compact-disc"></i>
-            <span>My Album</span>
-        </div>
-    </nav>
+    </div>
 
     <!-- Hidden Audio Element -->
     <audio id="audio-player"></audio>
